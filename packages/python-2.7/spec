@@ -2,8 +2,8 @@
 name: python-2.7
 
 files:
-- compile.env
-- runtime.env
-- Python-*.tgz
-- pip-*.tar.gz
-- setuptools-*.zip
+  - python-2.7/compile.env
+  - python-2.7/runtime.env
+  - Python-2.7.*.tgz
+  - pip-10.*.tar.gz
+  - setuptools-40.*.zip

@@ -1,10 +1,10 @@
 ---
-name: test
+name: python-test-3.6
 
 releases:
 - name: python
   version: create
-  url: file:///Users/pivotal/workspace/python-release
+  url: file://.
 
 stemcells:
 - alias: default
@@ -22,7 +22,7 @@ instance_groups:
   azs: [z1]
   instances: 1
   jobs:
-  - name: python-2.7-test
+  - name: python-3.6-test
     release: python
     properties: {}
   vm_type: default

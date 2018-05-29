@@ -1,0 +1,6 @@
+#!/bin/bash
+
+source /var/vcap/packages/python-3.6/bosh/runtime.env
+source /var/vcap/packages/python-3.6-test/bosh/runtime.env
+
+brkt -v

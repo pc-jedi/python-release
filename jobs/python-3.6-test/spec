@@ -1,0 +1,11 @@
+---
+name: python-3.6-test
+
+templates:
+  run: bin/run
+
+packages:
+- python-3.6
+- python-3.6-test
+
+properties: {}

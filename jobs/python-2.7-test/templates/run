@@ -3,4 +3,4 @@
 source /var/vcap/packages/python-2.7/bosh/runtime.env
 source /var/vcap/packages/python-2.7-test/bosh/runtime.env
 
-brkt -v
+awscli -v

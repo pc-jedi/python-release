@@ -6,32 +6,32 @@ set -e # exit immediately if a simple command exits with a non-zero status
 
 echo "Copying compile.env..."
 mkdir ${BOSH_INSTALL_TARGET}/bosh
-cp python-2.7/runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
-cp python-2.7/compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
+cp python-3.6/runtime.env ${BOSH_INSTALL_TARGET}/bosh/runtime.env
+cp python-3.6/compile.env ${BOSH_INSTALL_TARGET}/bosh/compile.env
 
 echo "Extracting python..."
-tar xzvf Python-2.7.*.tgz
+tar xzvf Python-3.6.*.tgz
 
 echo "Building python..."
-pushd Python-2.7.*
+pushd Python-3.6.*
   ./configure --prefix=$BOSH_INSTALL_TARGET
   make
   make install
 popd
 
 echo "Creating site packages..."
-mkdir -p $BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+mkdir -p $BOSH_INSTALL_TARGET/lib/python3.6/site-packages
 
 echo "Setting the PYTHONPATH with site packages..."
-export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python2.7/site-packages
+export PYTHONPATH=$BOSH_INSTALL_TARGET/lib/python3.6/site-packages
 
 echo "Extracting setuptools..."
 unzip setuptools-*.zip
 
 echo "Installing setuptools..."
 pushd setuptools-*
-  $BOSH_INSTALL_TARGET/bin/python2.7 bootstrap.py
-  $BOSH_INSTALL_TARGET/bin/python2.7 setup.py install --prefix=$BOSH_INSTALL_TARGET
+  $BOSH_INSTALL_TARGET/bin/python3.6 bootstrap.py
+  $BOSH_INSTALL_TARGET/bin/python3.6 setup.py install --prefix=$BOSH_INSTALL_TARGET
 popd
 
 echo "Extracting pip..."
@@ -39,5 +39,5 @@ tar -xzf pip-*.tar.gz
 
 echo "Installing pip..."
 pushd pip-*
-  $BOSH_INSTALL_TARGET/bin/python2.7 setup.py install --prefix=$BOSH_INSTALL_TARGET
+  $BOSH_INSTALL_TARGET/bin/python3.6 setup.py install --prefix=$BOSH_INSTALL_TARGET
 popd

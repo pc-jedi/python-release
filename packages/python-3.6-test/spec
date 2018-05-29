@@ -1,0 +1,7 @@
+---
+name: python-3.6-test
+
+dependencies:
+- python-3.6
+
+files: []

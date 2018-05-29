@@ -1,0 +1,11 @@
+---
+name: python-3.6
+
+dependencies: []
+
+files:
+  - python-3.6/runtime.env
+  - python-3.6/compile.env
+  - Python-3.6*.tgz
+  - pip-10.*.tar.gz
+  - setuptools-40.*.zip
